@@ -1,0 +1,234 @@
+.pure-material-button-outlined {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: solid 1px;
+    border-color: var(--btn-brdr-color);
+    border-radius: 4px;
+    padding: 0 16px;
+    min-width: 64px;
+    height: 36px;
+    vertical-align: middle;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    color: #4dabf5;
+    background-color: var(--input-background);
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 34px;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.pure-material-button-outlined::-moz-focus-inner {
+    border: none;
+}
+
+/* Overlay */
+.pure-material-button-outlined::before {
+    background-color: var(--input-background);
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: currentColor;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+/* Ripple */
+.pure-material-button-outlined::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    padding: 50%;
+    width: 32px;
+    height: 32px;
+    background-color: currentColor;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity 1s, transform 0.5s;
+}
+
+/* Hover, Focus */
+.pure-material-button-outlined:hover::before {
+    opacity: 0.04;
+}
+
+.pure-material-button-outlined:focus::before {
+    opacity: 0.12;
+}
+
+.pure-material-button-outlined:hover:focus::before {
+    opacity: 0.16;
+}
+
+/* Active */
+.pure-material-button-outlined:active::after {
+    opacity: 0.16;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0s;
+}
+
+/* Disabled */
+.pure-material-button-outlined:disabled {
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    background-color: transparent;
+    cursor: initial;
+}
+
+.pure-material-button-outlined:disabled::before {
+    opacity: 0;
+}
+
+.pure-material-button-outlined:disabled::after {
+    opacity: 0;
+}
+
+/*      Classes      */
+.pure-material-radio {
+    z-index: 0;
+    position: relative;
+    display: inline-block;
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Input */
+.pure-material-radio>input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    z-index: -1;
+    position: absolute;
+    left: -10px;
+    top: -8px;
+    display: block;
+    margin: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    outline: none;
+    opacity: 0;
+    transform: scale(1);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+/* Span */
+.pure-material-radio>span {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Circle */
+.pure-material-radio>span::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 2px 10px 2px 0;
+    border: solid 1px;
+    /* Safari */
+    border-color: #e5e5e5;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    vertical-align: top;
+    transition: border-color 0.2s;
+}
+
+/* Check */
+.pure-material-radio>span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+    transform: translate(5px, 5px) scale(0);
+    transition: transform 0.2s;
+}
+
+/* Checked */
+.pure-material-radio>input:checked {
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.pure-material-radio>input:checked+span::before {
+    border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.pure-material-radio>input:checked+span::after {
+    transform: translate(5px, 5px) scale(1);
+}
+
+/* Hover, Focus */
+.pure-material-radio:hover>input {
+    opacity: 0.04;
+}
+
+.pure-material-radio>input:focus {
+    opacity: 0.12;
+}
+
+.pure-material-radio:hover>input:focus {
+    opacity: 0.16;
+}
+
+/* Active */
+.pure-material-radio>input:active {
+    opacity: 1;
+    transform: scale(0);
+    transition: transform 0s, opacity 0s;
+}
+
+.pure-material-radio>input:active+span::before {
+    border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+/* Disabled */
+.pure-material-radio>input:disabled {
+    opacity: 0;
+}
+
+.pure-material-radio>input:disabled+span {
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    cursor: initial;
+}
+
+.pure-material-radio>input:disabled+span::before {
+    border-color: currentColor;
+}
+
+.pure-material-radio>input:disabled+span::after {
+    background-color: currentColor;
+}
+
+/*      Other Additions      */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+}
