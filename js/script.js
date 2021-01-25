@@ -8,10 +8,6 @@ setTimeout(
     }, 1750
 );
 
-// if (window.location.host != 'gpacalc.tk') {
-//     window.location.replace('http://gpacalc.tk');
-// }
-
 function numCheck() {
     var inputValue = $('#num').val();
     if (isNaN(inputValue) || inputValue > 50 || inputValue < 1) {
