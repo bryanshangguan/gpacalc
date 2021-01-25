@@ -5,7 +5,7 @@ setTimeout(
     function() {
         $(".frame").fadeOut(750);
         $("#content").fadeIn(750);
-    }, 50
+    }, 1750
 );
 
 // if (window.location.host != 'gpacalc.tk') {
