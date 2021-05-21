@@ -62,29 +62,28 @@ function calc() {
         creditT = 0;
     for (var i = 1; i <= amtGrades; i++) {
         var credits = parseFloat($('#credit' + i).val());
-        var calcU = gradeCalcU($('#grade' + i).val());
+        var gradeEntered = $('#grade' + i).val();
+        var calcU = gradeCalcU(gradeEntered);
         switch ($("input[name='group" + i + "']:checked").val()) {
             case 'uw':
                 totW += calcU * credits;
                 break;
             case 'cp':
-                totW += gradeCalcCP($('#grade' + i).val()) * credits;
+                totW += gradeCalcCP(gradeEntered) * credits;
                 break;
             case 'a':
-                totW += gradeCalcA($('#grade' + i).val()) * credits;
+                totW += gradeCalcA(gradeEntered) * credits;
                 break;
             case 'h':
-                totW += gradeCalcH($('#grade' + i).val()) * credits;
+                totW += gradeCalcH(gradeEntered) * credits;
                 break;
         }
+        saveGrade(i, gradeEntered, credits, $("input[name='group" + i + "']:checked").val(), amtGrades);
         totU += calcU * credits;
         creditT += credits;
     }
     $('#ugpaPlacement').html('Your unweighted GPA is ' + roundNumber(totU / creditT, 4));
-    if (roundNumber(totU / creditT, 4) < 3.0) {
-        console.log("dumbass");
-    }
-    $('#wgpaPlacement').html('Your weighted GPA is ' + roundNumber(totW / creditT, 4) + '<br><br><br><i>*Disclaimer: the weighted GPA may have a deviation of &plusmn0.10</i>');
+    $('#wgpaPlacement').html('Your weighted GPA is ' + roundNumber(totW / creditT, 4) + '<br><br><br><i>Your grades are saved locally on your device for your convenience.</i>');
     $('#gpa').slideDown(600);
 }
 

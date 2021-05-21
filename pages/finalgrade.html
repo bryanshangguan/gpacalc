@@ -9,13 +9,12 @@
   <meta name="keywords" content="calculator, GPA, gpa, school, college
 gpa calculator, grades, credits, whrhs, highschool, watchung hills, warren">
   <link rel="shortcut icon" href="assets/favicon.ico">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/loader.css">
-  <link rel="stylesheet" href="css/material.css">
-  <script src="js/script.js"></script>
-  <script src="js/gpa.js"></script>
-  <script src="js/localStorage.js"></script>
-  <script src="js/jquery.min.js"></script>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/loader.css">
+  <link rel="stylesheet" href="../css/material.css">
+  <script src="../js/script.js"></script>
+  <script src="../js/gpa.js"></script>
+  <script src="../js/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/71f7c994e8.js" crossorigin="anonymous"></script>
 </head>
 
@@ -32,7 +31,6 @@ gpa calculator, grades, credits, whrhs, highschool, watchung hills, warren">
   <div id="content" style="display: none;">
     <div id="tggleTheme">
       <button class="theme-toggle pure-material-button-outlined"><i class="fas fa-sliders-h"></i> Toggle Theme</button>
-      <button class="pure-material-button-outlined" onClick="clearGrades()"><i class="fas fa-eraser"></i> Clear Grades</button>
     </div>
     <center>
       <div id="container">
@@ -41,10 +39,7 @@ gpa calculator, grades, credits, whrhs, highschool, watchung hills, warren">
             <p id="heading">How many classes are you taking?</p>
             <input type="number" id="num" class="textfield" onKeyUp="numCheck()" onKeyPress="return event.charCode >= 48 || event.charCode == 13" placeholder="#" autocomplete="off">
             <br><br>
-            <button class="pure-material-button-outlined" onClick="loadGrades()"><i class="fas fa-cloud-download-alt"></i> Load Saved Grades</button>
             <button class="pure-material-button-outlined" id="displayCalcBtn" onClick="displayCalc()" disabled><i class="fas fa-server"></i> Enter</button>
-            <br><br>
-            <p><i>Disclaimer: If you press enter, your saved grades will be erased.</i></p>
           </form>
           <form action="javascript:void(0)" name="GPA" id="calc">
             <div id="inputs">
@@ -55,25 +50,8 @@ gpa calculator, grades, credits, whrhs, highschool, watchung hills, warren">
             <button class="pure-material-button-outlined" onClick="calc()"><i class="fas fa-calculator"></i> Calculate</button>
             <button class="pure-material-button-outlined" onClick="reset()"><i class="fas fa-redo-alt"></i> Reset</button>
           </form>
-          <div id="gpa">
-            <a id="ugpaPlacement"></a>
-            <br>
-            <a id="wgpaPlacement"></a>
-            <br>
-          </div>
         </div>
-      </div>
-      <div class="contain">
-        <p id="heading">Questions?</p>
-        <form name='contact' method='POST'><input type='hidden' name='form-name' value='contact' />
-          <input type="email" name="email" class="textfield" placeholder="Email" required>
-          <br><br>
-          <textarea name="question" cols="30" rows="10" class="textfield" placeholder="Question" autocomplete="off"></textarea>
-          <br><br>
-          <button type="submit" class="pure-material-button-outlined"><i class="fas fa-share-square"></i> Send</button>
-        </form>
       </div>
     </center>
   </div>
 </body>
-<script src="js/theme.js"></script>
