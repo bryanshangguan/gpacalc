@@ -232,3 +232,7 @@ input[type=number] {
     -moz-appearance: textfield;
     /* Firefox */
 }
+
+.largeInput {
+    width: 96.4%;
+}

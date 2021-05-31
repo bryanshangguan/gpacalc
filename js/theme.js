@@ -12,12 +12,12 @@ btn.addEventListener("click", function() {
     if (prefersDarkScheme.matches) {
         document.body.classList.toggle("light-theme");
         var theme = document.body.classList.contains("light-theme") ?
-            "light":
+            "light" :
             "dark";
     } else {
         document.body.classList.toggle("dark-theme");
         var theme = document.body.classList.contains("dark-theme") ?
-            "dark":
+            "dark" :
             "light";
     }
     localStorage.setItem("theme", theme);

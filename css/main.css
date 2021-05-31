@@ -1,7 +1,6 @@
 body {
     margin: 0;
     font-family: "Roboto", "Segoe UI";
-    padding-bottom: 160px;
     background: var(--bkg-color);
     color: var(--text-color);
     --text-color: black;
